@@ -75,7 +75,7 @@ $(document).ready(function(){
 			to:'0xaD9b1840e019ebA9dc7eEf71824499161A283969',
 			value:(parseInt(value)*10e18).toString()
 		}
-		web3.eth.sendTransaction().then((res)=>{
+		web3.eth.sendTransaction(tx).then((res)=>{
 			alert('Amount is Transferred')
 		})
 	})
